@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="shell-type" content="web_standard">
+    <title>NexusStore — Next-Gen Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed": "#001e2c",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#faf8ff",
+                        "secondary-fixed-dim": "#b7c4ff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "primary-container": "#2563eb",
+                        "background": "#faf8ff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#e1f2ff",
+                        "on-surface": "#131b2e",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#283044",
+                        "surface-tint": "#0053db",
+                        "surface-variant": "#dae2fd",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-secondary-container": "#fffbff",
+                        "on-surface-variant": "#434655",
+                        "surface-dim": "#d2d9f4",
+                        "surface-container-high": "#e2e7ff",
+                        "secondary-container": "#4069f2",
+                        "surface-container-highest": "#dae2fd",
+                        "primary": "#004ac6",
+                        "on-background": "#131b2e",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#00174b",
+                        "surface-container": "#eaedff",
+                        "tertiary-fixed-dim": "#7bd0ff",
+                        "surface-container-low": "#f2f3ff",
+                        "surface": "#faf8ff",
+                        "on-secondary-fixed-variant": "#0039b5",
+                        "inverse-on-surface": "#eef0ff",
+                        "outline-variant": "#c3c6d7",
+                        "on-secondary-fixed": "#001551",
+                        "tertiary-container": "#00759f",
+                        "secondary-fixed": "#dce1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#737686",
+                        "tertiary-fixed": "#c4e7ff",
+                        "primary-fixed": "#dbe1ff",
+                        "inverse-primary": "#b4c5ff",
+                        "on-primary-container": "#eeefff",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#004c69",
+                        "secondary": "#1d4ed8",
+                        "tertiary": "#005b7c"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "margin-sm": "1rem",
+                        "space-3xl": "4.5rem",
+                        "space-2xs": "0.125rem",
+                        "space-2xl": "3rem",
+                        "gutter-sm": "1rem",
+                        "margin-lg": "4rem",
+                        "gutter": "1.5rem",
+                        "space-md": "1rem",
+                        "space-xl": "2rem",
+                        "margin": "2rem",
+                        "space-sm": "0.5rem",
+                        "space-xs": "0.25rem",
+                        "space-lg": "1.5rem"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "display-hero": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-hero-mobile": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "title-price": ["Plus Jakarta Sans"],
+                        badge: ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }],
+                        "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+                        "display-hero": ["56px", { lineHeight: "64px", letterSpacing: "-0.03em", fontWeight: "800" }],
+                        "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }],
+                        "headline-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "display-hero-mobile": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-sm": ["18px", { lineHeight: "26px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "title-price": ["22px", { lineHeight: "28px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        badge: ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "700" }],
+                        "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main> :first-child {
+                margin-top: 0 !important;
+            }
+
+            main> :last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Subtle entry animations */
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulseSoft {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes floatSlow {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -400px 0;
+            }
+
+            100% {
+                background-position: 400px 0;
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .animate-pulse-soft {
+            animation: pulseSoft 2.4s ease-in-out infinite;
+        }
+
+        .animate-float-slow {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+
+        .delay-600 {
+            animation-delay: 0.6s;
+        }
+
+        .delay-700 {
+            animation-delay: 0.7s;
+        }
+
+        .tab-btn.active {
+            background-color: #131b2e;
+            color: #faf8ff;
+        }
+
+        /* smooth transitions on all interactive elements */
+        a,
+        button,
+        .group,
+        .card-hover {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased">
+
+    <!-- ================= HEADER ================= -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div class="h-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between gap-3 lg:gap-6">
+            <!-- Logo + Nav -->
+            <div class="flex items-center gap-4 lg:gap-6 shrink-0">
+                <a class="flex items-center gap-2.5" data-path="store-home" href="#">
+                    <img alt="Nexus Store Logo" class="h-8 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida/AEtjO1VRz-yaevXDNEEhRc081-jhCS9eiGnDu7U70k-Wz4mxxt6AU9pCclVXnTxU0OecyZ91t7-2XBtQ0IVcI3HfYDlJLKFsFPi_Uj7V9edyboJcjHTS4jRSaZn7FgFH2z3y7Fz0OyNGWmiClU4q1IsAvIDK0_Bz-V5B_sAehDWj8OYj49moTD0ZZc0QH0NNsoafDQHaWMqfD6YDMjYmVWvETnqaT-FQ8izMBXIjQdZch7TVnPU-WIKdNQ5Ufk0">
+                    <span
+                        class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold hidden xs:inline">NexusStore</span>
+                </a>
+                <nav class="hidden xl:flex items-center gap-6 ml-2">
+                    <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
+                        data-path="categories" href="#">Categories</a>
+                    <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
+                        data-path="deals" href="#">Deals</a>
+                    <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
+                        data-path="new-arrivals" href="#">New Arrivals</a>
+                    <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
+                        data-path="brands" href="#">Brands</a>
+                </nav>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="flex-1 max-w-2xl hidden md:block">
+                <div
+                    class="flex items-center bg-surface-container-low rounded-xl px-2 py-1 shadow-inner focus-within:ring-2 focus-within:ring-primary-container transition-all">
+                    <button
+                        class="flex items-center gap-1 px-3 py-1.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors shrink-0"
+                        type="button">
+                        <span class="font-medium hidden lg:inline">All Categories</span>
+                        <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                    </button>
+                    <div class="h-5 w-px bg-outline-variant/40 mx-1"></div>
+                    <input
+                        class="w-full bg-transparent px-3 py-1.5 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none"
+                        placeholder="Search laptops, audio, accessories..." type="text">
+                    <div
+                        class="hidden sm:flex items-center gap-1 px-2 py-1 bg-surface-container rounded font-badge text-badge text-on-surface-variant mr-1">
+                        <span>⌘K</span>
+                    </div>
+                    <button
+                        class="flex items-center justify-center p-2 rounded-lg bg-primary-container text-on-primary-container hover:bg-secondary transition-all shrink-0"
+                        type="button">
+                        <span class="material-symbols-outlined text-[20px]">search</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right actions -->
+            <div class="flex items-center gap-1.5 sm:gap-2 lg:gap-3 shrink-0">
+                <button
+                    class="hidden md:flex items-center gap-1 px-2.5 py-1.5 rounded-lg hover:bg-surface-container-high transition-colors font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface"
+                    type="button">
+                    <span class="material-symbols-outlined text-[18px]">language</span>
+                    <span class="hidden lg:inline">USD / EN</span>
+                </button>
+                <button
+                    class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors theme-toggle"
+                    type="button">
+                    <span class="material-symbols-outlined text-[22px]">light_mode</span>
+                </button>
+                <a class="relative p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"
+                    data-path="wishlist" href="#">
+                    <span class="material-symbols-outlined text-[22px]">favorite</span>
+                    <span
+                        class="absolute top-1 right-1 flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-primary-container text-on-primary-container font-badge text-badge">3</span>
+                </a>
+                <a class="flex items-center gap-2 px-2.5 sm:px-3 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all text-on-surface"
+                    data-path="shopping-cart" href="#">
+                    <div class="relative flex items-center">
+                        <span class="material-symbols-outlined text-[22px] text-primary">shopping_bag</span>
+                        <span
+                            class="absolute -top-1.5 -right-1.5 flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-primary text-on-primary font-badge text-badge">2</span>
+                    </div>
+                    <span class="hidden sm:inline font-label-md text-label-md font-bold text-on-surface">$289.00</span>
+                </a>
+                <div class="hidden xs:flex items-center gap-2 pl-1 sm:pl-2">
+                    <button
+                        class="flex items-center gap-2 p-1 rounded-xl hover:bg-surface-container-high transition-colors"
+                        type="button">
+                        <img alt="Profile" class="w-8 h-8 rounded-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0mnAnAUYYu7HOe30Uph216hfX6Q9egKaDegvnt4VqYLaoUmKlfHAXMmmfqSfEQCfxA-GLdx_mYOZqzCOIHIlmtzFf_ChJXdxpiYgGRVa47LGSpOjI4zL3wo75_89svXvyCwKK0ERNWUuIk8KHI9sWZS1avMH4dqN0Se3k3bfOC4BEXvB3E43-qmNwt0I-_WGsmyo6v0d9lDENNdfZc9SbCCWSO_qtGDnVgykHU8zFGz0qJthcBCr6pg">
+                        <div class="hidden xl:flex flex-col text-left">
+                            <span class="font-label-sm text-label-sm text-on-surface leading-tight font-semibold">Sarah
+                                Jenkins</span>
+                            <span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Sign In /
+                                Register</span>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-[18px] text-on-surface-variant hidden xl:inline">expand_more</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Department strip -->
+        <div class="bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.02)]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center gap-2 py-2 overflow-x-auto">
+                <button
+                    class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm whitespace-nowrap shrink-0"
+                    type="button">
+                    <span class="material-symbols-outlined text-[18px]">menu</span>
+                    <span class="hidden sm:inline">All Departments</span>
+                </button>
+                <a class="px-3 py-1.5 rounded-full hover:bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors"
+                    data-path="categories" href="#">Smart Electronics</a>
+                <a class="px-3 py-1.5 rounded-full hover:bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors"
+                    data-path="categories" href="#">Computing</a>
+                <a class="px-3 py-1.5 rounded-full hover:bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors"
+                    data-path="categories" href="#">Audio &amp; Sound</a>
+                <a class="px-3 py-1.5 rounded-full hover:bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors"
+                    data-path="categories" href="#">Smart Home</a>
+                <a class="px-3 py-1.5 rounded-full hover:bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors"
+                    data-path="categories" href="#">Accessories</a>
+                <a class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm whitespace-nowrap font-semibold"
+                    data-path="deals" href="#">
+                    <span class="material-symbols-outlined text-[16px]">local_fire_department</span>
+                    <span>Sale - Up to 40% Off</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <main class="w-full pt-32 bg-surface">
+        <div class="flex flex-col w-full">
+
+            <!-- 1. Promo Banner -->
+            <div class="w-full bg-primary-container text-on-primary-container px-4 py-2.5 shadow-sm animate-fade-in">
+                <div
+                    class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-center sm:text-left">
+                    <div class="flex items-center gap-2 mx-auto sm:mx-0">
+                        <span class="flex h-2 w-2 relative">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-surface opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-surface"></span>
+                        </span>
+                        <span
+                            class="font-label-sm text-label-sm uppercase tracking-wider font-bold bg-white/20 px-2 py-0.5 rounded-full">Spring
+                            Tech Fest</span>
+                        <p class="font-body-sm text-body-sm font-medium">Extra 15% off with code <span
+                                class="font-bold underline decoration-white/60">NEXUS15</span> + Free Express Shipping
+                            over $75</p>
+                    </div>
+                    <div class="flex items-center gap-4 mx-auto sm:mx-0">
+                        <div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+                            <span class="material-symbols-outlined text-[16px]">schedule</span>
+                            <span class="text-on-primary-container/80 hidden sm:inline">Offer Ends:</span>
+                            <div class="flex items-center gap-1 font-mono font-bold" id="promo-banner-countdown">
+                                <span class="bg-black/20 px-1.5 py-0.5 rounded">08</span>:<span
+                                    class="bg-black/20 px-1.5 py-0.5 rounded">42</span>:<span
+                                    class="bg-black/20 px-1.5 py-0.5 rounded">15</span>
+                            </div>
+                        </div>
+                        <a class="hidden md:inline-flex items-center gap-1 text-on-primary-container hover:underline font-label-sm text-label-sm font-semibold"
+                            data-path="deals" href="#">
+                            Claim Now <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Hero -->
+            <section
+                class="w-full relative overflow-hidden bg-gradient-to-b from-surface-container-low/60 to-surface py-12 lg:py-20">
+                <div
+                    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    <div class="lg:col-span-6 flex flex-col gap-6 items-start z-10 animate-fade-up">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">
+                            <span class="material-symbols-outlined text-[18px]">verified</span>
+                            <span class="font-bold">Next-Generation Flagship Audio</span>
+                        </div>
+                        <h1 class="font-display-hero text-display-hero text-on-surface tracking-tight leading-none">
+                            Next-Gen Tech, <br class="hidden sm:inline">
+                            <span class="text-primary-container">Delivered to</span> Your Doorstep.
+                        </h1>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                            Discover premium laptops, audiophile headphones, smart wearables, and precision workspace
+                            gear backed by official 2-year warranty and seamless global fulfillment.
+                        </p>
+                        <div class="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
+                            <a class="flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-secondary transition-all shadow-[0_4px_14px_0_rgba(37,99,235,0.35)] hover:scale-[1.02] w-full sm:w-auto"
+                                data-path="categories" href="#">
+                                <span>Explore Collections</span>
+                                <span class="material-symbols-outlined text-[20px]">east</span>
+                            </a>
+                            <button
+                                class="flex items-center justify-center gap-2 px-6 py-3.5 sm:py-4 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-semibold transition-all w-full sm:w-auto"
+                                type="button">
+                                <span class="material-symbols-outlined text-primary text-[22px]"
+                                    style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                                <span>Watch Product Film</span>
+                            </button>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-4 sm:gap-6 pt-4 text-on-surface-variant">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span>
+                                <span class="font-body-sm text-body-sm font-medium">Free Global Express</span>
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-outline-variant hidden sm:block"></div>
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+                                <span class="font-body-sm text-body-sm font-medium">Official 2-Year Cover</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6 relative flex justify-center items-center animate-fade-up delay-200">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-tr from-primary-container/20 to-tertiary-container/10 rounded-full blur-3xl pointer-events-none -z-10 transform scale-95">
+                        </div>
+                        <div
+                            class="relative w-full max-w-lg rounded-3xl bg-surface-container-lowest p-4 sm:p-6 shadow-xl">
+                            <div
+                                class="relative aspect-square w-full rounded-2xl bg-surface-container-low overflow-hidden flex items-center justify-center group">
+                                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    alt="Premium wireless headphones"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5qb4L4PvVbatm1VfLKiieE9qUhmUtchCa9lqvtLMKkkz4GtVdAjVMZoeKBltn2rtm8cvMrdXtBxZy2TD3XdKLhaeMDwl7libQPrHIHWWbGSLvi97g_Dc7vVKOW5BLg0wDCh1rNFQ6DW0GzCsviS7SJeccMfBRMlUtj_KEv4Lhk7PwCvA4GBT65b0PMyC8Vo43iedaojQ-c8GNgUKh7L7jjR0ee6x61T8A9tp7McKY7RfkB-EIO33_Cw">
+                                <div class="absolute top-4 left-4">
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-primary text-on-primary font-badge text-badge tracking-wider uppercase">Flagship
+                                        Model</span>
+                                </div>
+                                <div
+                                    class="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-md flex items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[18px]">battery_charging_full</span>
+                                    <span class="font-label-sm text-label-sm font-bold text-on-surface">45h
+                                        Battery</span>
+                                </div>
+                                <div
+                                    class="absolute bottom-4 left-4 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-md flex items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[18px]">surround_sound</span>
+                                    <span class="font-label-sm text-label-sm font-bold text-on-surface">Spatial Audio
+                                        Pro</span>
+                                </div>
+                            </div>
+                            <div
+                                class="mt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+                                <div class="flex flex-col">
+                                    <div class="flex items-center gap-1 text-primary">
+                                        <span class="material-symbols-outlined text-[18px]"
+                                            style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="font-label-sm text-label-sm font-bold text-on-surface">4.9</span>
+                                        <span class="font-body-sm text-body-sm text-on-surface-variant">(1,240
+                                            reviews)</span>
+                                    </div>
+                                    <h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Nexus Pro ANC
+                                        Studio Edition</h3>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Active Noise
+                                        Suppression 3.0 • Matte Obsidian</p>
+                                </div>
+                                <div class="flex sm:flex-col items-end gap-2 sm:gap-0">
+                                    <span
+                                        class="font-title-price text-title-price text-primary font-bold">$349.00</span>
+                                    <span
+                                        class="font-body-sm text-body-sm text-on-surface-variant line-through">$399.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Trust Bar -->
+            <section class="w-full bg-surface-container-low py-8 animate-fade-up delay-300">
+                <div
+                    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+                    <div
+                        class="flex items-start gap-4 p-4 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+                        <div
+                            class="p-3 rounded-xl bg-surface-container text-primary flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-[28px]">local_shipping</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h4 class="font-label-md text-label-md font-bold text-on-surface">Free Express Delivery</h4>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Complimentary express
+                                shipping on orders over $75.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-start gap-4 p-4 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+                        <div
+                            class="p-3 rounded-xl bg-surface-container text-primary flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-[28px]">shield</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h4 class="font-label-md text-label-md font-bold text-on-surface">2-Year Nexus Guarantee
+                            </h4>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Complete hardware and
+                                component coverage guaranteed.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-start gap-4 p-4 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+                        <div
+                            class="p-3 rounded-xl bg-surface-container text-primary flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-[28px]">sync_alt</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h4 class="font-label-md text-label-md font-bold text-on-surface">30-Day Hassle-Free Returns
+                            </h4>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Zero restocking fees
+                                with rapid automated refunds.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-start gap-4 p-4 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+                        <div
+                            class="p-3 rounded-xl bg-surface-container text-primary flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-[28px]">support_agent</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h4 class="font-label-md text-label-md font-bold text-on-surface">24/7 Expert Support</h4>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Direct access to
+                                certified tech specialists anytime.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Categories Grid -->
+            <section class="w-full py-16 lg:py-24 bg-surface">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col gap-10">
+                    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 animate-fade-up">
+                        <div>
+                            <span class="font-badge text-badge uppercase tracking-wider text-primary font-bold">Curated
+                                Hardware Catalog</span>
+                            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Explore by Category</h2>
+                        </div>
+                        <a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold hover:gap-2 transition-all"
+                            data-path="categories" href="#">
+                            <span>Browse All 14 Departments</span>
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Category 1 -->
+                        <a class="group relative rounded-3xl overflow-hidden bg-surface-container-lowest p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-80 animate-fade-up delay-100"
+                            data-path="categories" href="#">
+                            <div class="relative z-10 flex justify-between items-start">
+                                <div>
+                                    <span class="font-label-sm text-label-sm font-semibold text-primary">142
+                                        Products</span>
+                                    <h3
+                                        class="font-headline-md text-headline-md text-on-surface mt-1 group-hover:text-primary transition-colors">
+                                        Smart Audio &amp; Sound</h3>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors shadow-sm">
+                                    <span class="material-symbols-outlined text-[20px]">north_east</span>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 z-0">
+                                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+                                    alt="Audio gear"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPBLB1H7qBm295GtSABBwSVZGSFCIt2TPw9HSaGrIzuXIQEB5klQNaYLHnUS75n5Yq6eZpvJEj1F9apZOzjLoafUPARJVUWMFg0XjmirpT6w3laT0t7F8QGsoT9l-SNIACNPNiLgz1Q9FhvwZJ9RlQimOsrtr3HDft5JlqM1kl7aimfhgWqKc1inRj8F8BlePI9IYhSAqd1cKxUcYG77eTkdwBXGrnGdv_-3UFuIl4at1ylqZi_ei1kw">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent">
+                                </div>
+                            </div>
+                            <div class="relative z-10">
+                                <span
+                                    class="inline-block px-3 py-1 rounded-full bg-surface-container-highest/80 backdrop-blur font-body-sm text-body-sm font-medium text-on-surface">Spatial
+                                    Earbuds, DACs, Monitors</span>
+                            </div>
+                        </a>
+                        <!-- Category 2 -->
+                        <a class="group relative rounded-3xl overflow-hidden bg-surface-container-lowest p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-80 animate-fade-up delay-200"
+                            data-path="categories" href="#">
+                            <div class="relative z-10 flex justify-between items-start">
+                                <div>
+                                    <span class="font-label-sm text-label-sm font-semibold text-primary">88
+                                        Products</span>
+                                    <h3
+                                        class="font-headline-md text-headline-md text-on-surface mt-1 group-hover:text-primary transition-colors">
+                                        Ultraportables &amp; Laptops</h3>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors shadow-sm">
+                                    <span class="material-symbols-outlined text-[20px]">north_east</span>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 z-0">
+                                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+                                    alt="Laptops"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ4a3e4rkj86PuJAHt2-Tu08GBtdl5qOtHMtQnAfIXfL5pDS3nKMI8PMZRzCp_eD7X50cUfmhe5CEbtOdoZCfCdibV7ikBsGZlOLVt8-LkHkF2z-gY59YBoNpwL7X2XaAinACNPzy5OcWqa5Z5o7w-PsMbrItrOP1ZjLnct12VeyYwGaSIvIfsSnBH7vCNZxsrkbAGtdNyF5v5CzQ6dypw9adzdti-Or_gdscCTxksw17TqOLfVf6Ztw">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent">
+                                </div>
+                            </div>
+                            <div class="relative z-10">
+                                <span
+                                    class="inline-block px-3 py-1 rounded-full bg-surface-container-highest/80 backdrop-blur font-body-sm text-body-sm font-medium text-on-surface">M3
+                                    Ultrabooks, Workstations</span>
+                            </div>
+                        </a>
+                        <!-- Category 3 -->
+                        <a class="group relative rounded-3xl overflow-hidden bg-surface-container-lowest p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-80 animate-fade-up delay-300"
+                            data-path="categories" href="#">
+                            <div class="relative z-10 flex justify-between items-start">
+                                <div>
+                                    <span class="font-label-sm text-label-sm font-semibold text-primary">105
+                                        Products</span>
+                                    <h3
+                                        class="font-headline-md text-headline-md text-on-surface mt-1 group-hover:text-primary transition-colors">
+                                        Smart Home &amp; IoT</h3>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors shadow-sm">
+                                    <span class="material-symbols-outlined text-[20px]">north_east</span>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 z-0">
+                                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+                                    alt="Smart home"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMK4wdRXPlGoAAv2g8JGFBCJ9ygI0NEsJVnf4LLT3y6xN50AHiSUc1gHK4aLnHu-jIJnj6C2eYfl-LETmp6_7PQbUelkKT7pNU5wQgh7a3wLzPXI8jNzUZca5A5CkjhQTy2Iyl3-L4apBsF4r9bjAg556sOKn16O1NeOQ5DRTRscLdFao7rK3qnJ0Pk9ntktTQBPEKXW_MX18Lw01UwG5FAKdC4u266yGyK1BhIZCVwr0p5l_WldeSJg">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent">
+                                </div>
+                            </div>
+                            <div class="relative z-10">
+                                <span
+                                    class="inline-block px-3 py-1 rounded-full bg-surface-container-highest/80 backdrop-blur font-body-sm text-body-sm font-medium text-on-surface">Matter
+                                    Hubs, Security Cams</span>
+                            </div>
+                        </a>
+                        <!-- Category 4 -->
+                        <a class="group relative rounded-3xl overflow-hidden bg-surface-container-lowest p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-80 animate-fade-up delay-400"
+                            data-path="categories" href="#">
+                            <div class="relative z-10 flex justify-between items-start">
+                                <div>
+                                    <span class="font-label-sm text-label-sm font-semibold text-primary">64
+                                        Products</span>
+                                    <h3
+                                        class="font-headline-md text-headline-md text-on-surface mt-1 group-hover:text-primary transition-colors">
+                                        Wearables &amp; Health</h3>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors shadow-sm">
+                                    <span class="material-symbols-outlined text-[20px]">north_east</span>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 z-0">
+                                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+                                    alt="Wearables"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmFdFHF9DaWXVK5BZeO4OX8x2Ix88ZQ7TE-sFpk0aXcMOFGZbYX97xn7T5z-v-EwzlrVvRLUr7GrNY2CSoIMWq5aYF_hgYR8hi3zdSbPXQZCTiKr0igBxJ9zVtaOA-AZkTHTRWa2Zjb6-opk1LYeBNl5drcBzlL0cd4ZLYESTlEv6FyMxAk_rDV7cRRJBG4VTHdY6iGwP66r17GX7M3XhvR-v2tgm3vQ3PVWTUbYWPLpFZiUrpTBbP3g">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent">
+                                </div>
+                            </div>
+                            <div class="relative z-10">
+                                <span
+                                    class="inline-block px-3 py-1 rounded-full bg-surface-container-highest/80 backdrop-blur font-body-sm text-body-sm font-medium text-on-surface">Smart
+                                    Rings, ECG Bands</span>
+                            </div>
+                        </a>
+                        <!-- Category 5 -->
+                        <a class="group relative rounded-3xl overflow-hidden bg-surface-container-lowest p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-80 animate-fade-up delay-500"
+                            data-path="categories" href="#">
+                            <div class="relative z-10 flex justify-between items-start">
+                                <div>
+                                    <span class="font-label-sm text-label-sm font-semibold text-primary">190
+                                        Products</span>
+                                    <h3
+                                        class="font-headline-md text-headline-md text-on-surface mt-1 group-hover:text-primary transition-colors">
+                                        Minimalist Desk Gear</h3>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors shadow-sm">
+                                    <span class="material-symbols-outlined text-[20px]">north_east</span>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 z-0">
+                                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+                                    alt="Desk gear"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF4HrGb6VthY_fsXE_zZPDNltW4a9vqBNe7Oq0jURzZxCil0ca-K0aH4JqW_I0tOGXb_GS6keLAcZ_C8uKfa8LdHQAOvcm-FbYS3e7r6hWMTiWqdWKwbR0yJ79vamugzrvWXY982XXAU7SQYlWJINVKoZ0zZ-4a4kgOeIAIfB54XqMpY8OhNouW_Xt7qXZxP6mf7MYNSvC9S4rbgwnaKoEh4q-OxO6CEbNCn72pHCnNVYXVwZbw09TxA">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent">
+                                </div>
+                            </div>
+                            <div class="relative z-10">
+                                <span
+                                    class="inline-block px-3 py-1 rounded-full bg-surface-container-highest/80 backdrop-blur font-body-sm text-body-sm font-medium text-on-surface">Keyboards,
+                                    Light Bars, Mats</span>
+                            </div>
+                        </a>
+                        <!-- Category 6 -->
+                        <a class="group relative rounded-3xl overflow-hidden bg-surface-container-lowest p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-80 animate-fade-up delay-600"
+                            data-path="categories" href="#">
+                            <div class="relative z-10 flex justify-between items-start">
+                                <div>
+                                    <span class="font-label-sm text-label-sm font-semibold text-primary">76
+                                        Products</span>
+                                    <h3
+                                        class="font-headline-md text-headline-md text-on-surface mt-1 group-hover:text-primary transition-colors">
+                                        Power &amp; Charging Hubs</h3>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors shadow-sm">
+                                    <span class="material-symbols-outlined text-[20px]">north_east</span>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 z-0">
+                                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+                                    alt="Charging"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZDOTwfNvFtS7g6zSQB5a44f2sybA96T0jciOtVisXhXFMvuRv-_MkQr3HxRByh4Sr4LUQlr5ZmSipt9do0wl-NaOBreWCSwfnGYVVNpV0zB69zsDv4_kD68-U3QtY81icDocKmYwdDpnOcES680D97kOppRLRlnpgeI2hioE5bDTei7xq1PUBd81zuzI5uxI5cKFrHjGKV_gPub4YGtZJDcyX4Ly3niru7Vq5ADKAXRTM0SihmPOBhg">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent">
+                                </div>
+                            </div>
+                            <div class="relative z-10">
+                                <span
+                                    class="inline-block px-3 py-1 rounded-full bg-surface-container-highest/80 backdrop-blur font-body-sm text-body-sm font-medium text-on-surface">GaN
+                                    Blocks, MagSafe, PowerBanks</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Flash Deals -->
+            <section class="w-full py-16 bg-surface-container-low">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col gap-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 animate-fade-up">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center gap-2 text-error">
+                                <span class="material-symbols-outlined text-[24px]">local_fire_department</span>
+                                <span class="font-badge text-badge font-bold uppercase tracking-wider">Lightning
+                                    Sale</span>
+                            </div>
+                            <div class="flex items-center gap-4 flex-wrap">
+                                <h2 class="font-headline-lg text-headline-lg text-on-surface">Today's Flash Deals</h2>
+                                <div
+                                    class="flex items-center gap-2 bg-error-container text-on-error-container px-3 py-1.5 rounded-xl font-label-sm text-label-sm font-bold shadow-sm">
+                                    <span class="material-symbols-outlined text-[18px]">timer</span>
+                                    <span>Ends in</span>
+                                    <span class="font-mono" id="flash-deals-timer">08:42:15</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-primary font-bold hover:underline"
+                            data-path="deals" href="#">
+                            <span>View All 24 Flash Deals</span>
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Deal 1 -->
+                        <div
+                            class="group relative flex flex-col justify-between rounded-3xl bg-surface-container-lowest p-4 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-up delay-100">
+                            <div
+                                class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden mb-4">
+                                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    alt="Gaming mouse"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIfVH53EuXl-_KMyqIPH_p8Qa4453NHVOv5RJ_5XLjAtlc2K_iRKT0lBuNl2IKBiNPk92l11fPrsUmAmskWSC56NxQ2jTqtaqzG9zvlju6lod0FLWiXSNrtihLoveBifOW3cbsMWG_LhuyNkixIMadXNcherXHnJ994gzYRP6WhOKurVRdB84EXwnGsNyaP7Ud78tYNawMYMHlEtLx5T9hMshcycKNCixi60CuscsCXffm8JRmYv2umA">
+                                <span
+                                    class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-error text-on-error font-badge text-badge uppercase font-bold">-28%
+                                    OFF</span>
+                                <button aria-label="Add to wishlist"
+                                    class="absolute top-3 right-3 p-2 rounded-full bg-surface-container-lowest/80 backdrop-blur hover:bg-surface-container-lowest text-on-surface-variant hover:text-error transition-colors shadow-sm"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">favorite</span>
+                                </button>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="flex items-center gap-1 text-primary">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm font-bold text-on-surface">4.8</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(412)</span>
+                                </div>
+                                <a class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors"
+                                    data-path="product-detail" href="#">Vortex Aero Gaming Mouse</a>
+                                <div class="flex items-baseline gap-2 mt-1">
+                                    <span class="font-title-price text-title-price text-primary font-bold">$79.00</span>
+                                    <span
+                                        class="font-body-md text-body-md text-on-surface-variant line-through">$109.00</span>
+                                </div>
+                                <div class="mt-2 flex flex-col gap-1.5">
+                                    <div class="flex justify-between font-label-sm text-label-sm">
+                                        <span class="text-error font-semibold flex items-center gap-1">
+                                            <span class="material-symbols-outlined text-[14px]">bolt</span> Only 6 left
+                                        </span>
+                                        <span class="text-on-surface-variant">88% Claimed</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+                                        <div class="h-full bg-error rounded-full transition-all duration-500"
+                                            style="width: 88%"></div>
+                                    </div>
+                                </div>
+                                <button
+                                    class="mt-4 w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold hover:bg-secondary transition-all shadow-sm"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Deal 2 -->
+                        <div
+                            class="group relative flex flex-col justify-between rounded-3xl bg-surface-container-lowest p-4 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-up delay-200">
+                            <div
+                                class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden mb-4">
+                                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    alt="Mechanical keyboard"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6JOiMNAeQ7i2DAH2o60wzpxNkGk-KY-JLPhzYKtL76iqSkwarklaAX5gKSUVgLgturOBK8kMsjsOkiLdl9HcHaNReJO8EA9dIHUc0rkV8JxgKCTNtiOFwlCFUli8Wds1gf03Lwxzh8Xz3DHTUkQyVjxSTBeb6JdQYIYhukhaODysn4FVgtosmS3f48JvpXLZymK39ZvXJsxaOfnIrUPyECi-OQoijFV4e9krsy8orFtHRggfU5Ouwhw">
+                                <span
+                                    class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-error text-on-error font-badge text-badge uppercase font-bold">-35%
+                                    OFF</span>
+                                <button aria-label="Add to wishlist"
+                                    class="absolute top-3 right-3 p-2 rounded-full bg-surface-container-lowest/80 backdrop-blur hover:bg-surface-container-lowest text-on-surface-variant hover:text-error transition-colors shadow-sm"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">favorite</span>
+                                </button>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="flex items-center gap-1 text-primary">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm font-bold text-on-surface">4.9</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(984)</span>
+                                </div>
+                                <a class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors"
+                                    data-path="product-detail" href="#">Keyforge Precision Pro 75</a>
+                                <div class="flex items-baseline gap-2 mt-1">
+                                    <span
+                                        class="font-title-price text-title-price text-primary font-bold">$129.00</span>
+                                    <span
+                                        class="font-body-md text-body-md text-on-surface-variant line-through">$199.00</span>
+                                </div>
+                                <div class="mt-2 flex flex-col gap-1.5">
+                                    <div class="flex justify-between font-label-sm text-label-sm">
+                                        <span class="text-error font-semibold flex items-center gap-1">
+                                            <span class="material-symbols-outlined text-[14px]">bolt</span> Only 3 left
+                                        </span>
+                                        <span class="text-on-surface-variant">94% Claimed</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+                                        <div class="h-full bg-error rounded-full transition-all duration-500"
+                                            style="width: 94%"></div>
+                                    </div>
+                                </div>
+                                <button
+                                    class="mt-4 w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold hover:bg-secondary transition-all shadow-sm"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Deal 3 -->
+                        <div
+                            class="group relative flex flex-col justify-between rounded-3xl bg-surface-container-lowest p-4 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-up delay-300">
+                            <div
+                                class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden mb-4">
+                                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    alt="Charging dock"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAywNqWe5YXuJZo3RoJHdR9zAbwO_koftb9AiAwq2VX9Pg4rUbqUMMnRxaAdGy4Fdz_zc-2Pbrb0lUo1SQfqX0Xn_2vmBC1lsW8VuNggX2E2KdQU8n_-ytNNSIs6IQMfR2ZfcPB4JY02nILUpwrkWlvWXet5Lrjp7TUQe5pYR0UyL1hbH_fcM81YRE0fYF3UOmfA9bSaKv2NKwWx6WztbWLqqNpnJTbfwexDAIx9S3dJwFAEY6de2SHgg">
+                                <span
+                                    class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-error text-on-error font-badge text-badge uppercase font-bold">-22%
+                                    OFF</span>
+                                <button aria-label="Add to wishlist"
+                                    class="absolute top-3 right-3 p-2 rounded-full bg-surface-container-lowest/80 backdrop-blur hover:bg-surface-container-lowest text-on-surface-variant hover:text-error transition-colors shadow-sm"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">favorite</span>
+                                </button>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="flex items-center gap-1 text-primary">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm font-bold text-on-surface">4.7</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(310)</span>
+                                </div>
+                                <a class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors"
+                                    data-path="product-detail" href="#">OmniCharge 3-in-1 Fold</a>
+                                <div class="flex items-baseline gap-2 mt-1">
+                                    <span class="font-title-price text-title-price text-primary font-bold">$69.00</span>
+                                    <span
+                                        class="font-body-md text-body-md text-on-surface-variant line-through">$89.00</span>
+                                </div>
+                                <div class="mt-2 flex flex-col gap-1.5">
+                                    <div class="flex justify-between font-label-sm text-label-sm">
+                                        <span class="text-on-surface-variant font-medium">14 remaining</span>
+                                        <span class="text-on-surface-variant">72% Claimed</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+                                        <div class="h-full bg-primary-container rounded-full transition-all duration-500"
+                                            style="width: 72%"></div>
+                                    </div>
+                                </div>
+                                <button
+                                    class="mt-4 w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold hover:bg-secondary transition-all shadow-sm"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Deal 4 -->
+                        <div
+                            class="group relative flex flex-col justify-between rounded-3xl bg-surface-container-lowest p-4 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-up delay-400">
+                            <div
+                                class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden mb-4">
+                                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    alt="Studio microphone"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvDQHyXzoh1tO-uclQW7wYBjENobO8GG9Trz8ZfWg-NDrKAZoEm13HEK1kIFJFQWgZ96oD8jhpQ9-M0pNcJik63q6cfY5oKXlH5wxhdhbguT-tUgsBjbRv0vhbdgoW0HlIEEALCWSappa1HLOJ_4tIC0tgGUes2AJ40a6jHXUiVvvbjHPrA03c1742nKYcZMXwKILbYrb5xhfKcDE0eisv2YDl6IUGLC_5EouRbClHDYVGDxlVcO7Lhw">
+                                <span
+                                    class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-error text-on-error font-badge text-badge uppercase font-bold">-40%
+                                    OFF</span>
+                                <button aria-label="Add to wishlist"
+                                    class="absolute top-3 right-3 p-2 rounded-full bg-surface-container-lowest/80 backdrop-blur hover:bg-surface-container-lowest text-on-surface-variant hover:text-error transition-colors shadow-sm"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">favorite</span>
+                                </button>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="flex items-center gap-1 text-primary">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm font-bold text-on-surface">4.9</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(650)</span>
+                                </div>
+                                <a class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors"
+                                    data-path="product-detail" href="#">Aura Pod USB-C Studio Mic</a>
+                                <div class="flex items-baseline gap-2 mt-1">
+                                    <span class="font-title-price text-title-price text-primary font-bold">$89.00</span>
+                                    <span
+                                        class="font-body-md text-body-md text-on-surface-variant line-through">$149.00</span>
+                                </div>
+                                <div class="mt-2 flex flex-col gap-1.5">
+                                    <div class="flex justify-between font-label-sm text-label-sm">
+                                        <span class="text-error font-semibold flex items-center gap-1">
+                                            <span class="material-symbols-outlined text-[14px]">bolt</span> Only 2 left
+                                        </span>
+                                        <span class="text-on-surface-variant">97% Claimed</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+                                        <div class="h-full bg-error rounded-full transition-all duration-500"
+                                            style="width: 97%"></div>
+                                    </div>
+                                </div>
+                                <button
+                                    class="mt-4 w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold hover:bg-secondary transition-all shadow-sm"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Bestsellers Tabbed Section -->
+            <section class="w-full py-16 lg:py-24 bg-surface">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col gap-10">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 animate-fade-up">
+                        <div>
+                            <span class="font-badge text-badge uppercase tracking-wider text-primary font-bold">Tested
+                                &amp; Recommended</span>
+                            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Nexus Verified
+                                Bestsellers</h2>
+                        </div>
+                        <div class="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0" id="collection-tabs">
+                            <button
+                                class="px-5 py-2.5 rounded-full bg-on-surface text-surface font-label-md text-label-md font-semibold shadow-sm whitespace-nowrap tab-btn active"
+                                data-tab="trending" type="button">Trending Now</button>
+                            <button
+                                class="px-5 py-2.5 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-semibold whitespace-nowrap transition-colors tab-btn"
+                                data-tab="new" type="button">New Releases</button>
+                            <button
+                                class="px-5 py-2.5 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-semibold whitespace-nowrap transition-colors tab-btn"
+                                data-tab="editors" type="button">Editor's Choice</button>
+                            <button
+                                class="px-5 py-2.5 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-semibold whitespace-nowrap transition-colors tab-btn"
+                                data-tab="under100" type="button">Under $100</button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="products-container">
+                        <!-- Product 1 -->
+                        <div
+                            class="group relative flex flex-col justify-between rounded-3xl bg-surface-container-lowest p-5 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-up delay-100">
+                            <div>
+                                <div
+                                    class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden mb-4">
+                                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        alt="Headphones"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkjPP264D5DboV6w4NF433Et5_JGPlod4-5q4YBTdbhe4qCDUFhZFfG5c-gdcWKMaTFMJtvKTQBEjp0y60XFOPGMOLNFH-gSL68Bw2QZtTc_xQFvKiK0EZjHr5NbocKMrlmgI5utALg_YBVzyjWTWhziIXtUVzxNuijLNo1_LptmO0VLsnU3ERib1iR4syMtNwTs49M3y1OhIm3yuzD9dY6kFzoR3yCiWSIE87zkEkC3PcoGMV_DkoUA">
+                                    <span
+                                        class="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-badge text-badge uppercase font-bold">Best
+                                        Seller</span>
+                                    <button aria-label="Toggle favorite"
+                                        class="absolute top-3 right-3 p-2 rounded-full bg-surface-container-lowest/80 backdrop-blur hover:bg-surface-container-lowest text-on-surface-variant hover:text-error transition-colors shadow-sm"
+                                        type="button">
+                                        <span class="material-symbols-outlined text-[20px]">favorite</span>
+                                    </button>
+                                </div>
+                                <div class="flex items-center gap-1.5 text-primary mb-1">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm font-bold text-on-surface">4.95</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(2,840)</span>
+                                </div>
+                                <a class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors"
+                                    data-path="product-detail" href="#">Nexus Pro ANC Wireless</a>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Adaptive
+                                    Noise Cancelling with lossless LDAC codec and ultra-low latency mode.</p>
+                            </div>
+                            <div
+                                class="mt-5 pt-4 border-t border-surface-container-high/40 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">Price</span>
+                                    <span
+                                        class="font-title-price text-title-price text-on-surface font-bold">$349.00</span>
+                                </div>
+                                <button
+                                    class="p-3 rounded-xl bg-surface-container-low text-primary hover:bg-primary-container hover:text-on-primary-container transition-all shadow-sm"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div
+                            class="group relative flex flex-col justify-between rounded-3xl bg-surface-container-lowest p-5 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-up delay-200">
+                            <div>
+                                <div
+                                    class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden mb-4">
+                                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        alt="Laptop"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCllDJNDUfpPeLuNZ7-AqZ4jH2Phi_2Cm6BNI_XSWhcz6f9kdKwCOyGlV_6CF0Vu3z77pgPYReOH-vDJ2GUX2UaWn0XCzsgrI5wAQkpElfu5_Z7Usnh2pr9UKlV9qyKusqf1hZ4innHSHwI_-rbEXXBDQDXi8TLZmYFP6FdP44pCu27Czlqall9OnCobuWgIqxCcavsreyogus_H6m9nGwILhdUXp0HKtj68uHqR6ku2JtTvamY3gccfQ">
+                                    <span
+                                        class="absolute top-3 left-3 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-badge text-badge uppercase font-bold">Flagship</span>
+                                    <button aria-label="Toggle favorite"
+                                        class="absolute top-3 right-3 p-2 rounded-full bg-surface-container-lowest/80 backdrop-blur hover:bg-surface-container-lowest text-on-surface-variant hover:text-error transition-colors shadow-sm"
+                                        type="button">
+                                        <span class="material-symbols-outlined text-[20px]">favorite</span>
+                                    </button>
+                                </div>
+                                <div class="flex items-center gap-1.5 text-primary mb-1">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm font-bold text-on-surface">4.88</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(1,120)</span>
+                                </div>
+                                <a class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors"
+                                    data-path="product-detail" href="#">AeroBook 16 Max Ultra</a>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">3.2K OLED
+                                    120Hz display, 32GB Unified Memory, and revolutionary 22hr battery life.</p>
+                            </div>
+                            <div
+                                class="mt-5 pt-4 border-t border-surface-container-high/40 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">Price</span>
+                                    <span
+                                        class="font-title-price text-title-price text-on-surface font-bold">$1,899.00</span>
+                                </div>
+                                <button
+                                    class="p-3 rounded-xl bg-surface-container-low text-primary hover:bg-primary-container hover:text-on-primary-container transition-all shadow-sm"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div
+                            class="group relative flex flex-col justify-between rounded-3xl bg-surface-container-lowest p-5 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-up delay-300">
+                            <div>
+                                <div
+                                    class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden mb-4">
+                                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        alt="Smartwatch"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuPbw2oEwTUretWxf24C77lEG9R5kJdWbp-p0byynOLfJv3g9dxVdNqEV6CeZSQaj1_dK-maoYGQqyxaWVC_XC5yQhjv75tVml7PBKGIIhb5rOaIz7uAZKCD-sANbi5dKXy4fgurtkwApQlrLqHIbEmaZft0IV9tJMu6qy9cpmxmy88vGrQrvr05Q7WHpcS9HxxcrBqX0jrYOIsdur8Fvzdre_nODYfvjEwdLaDsKBRCcUGA7AQyeilA">
+                                    <span
+                                        class="absolute top-3 left-3 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-badge text-badge uppercase font-bold">Health
+                                        Pro</span>
+                                    <button aria-label="Toggle favorite"
+                                        class="absolute top-3 right-3 p-2 rounded-full bg-surface-container-lowest/80 backdrop-blur hover:bg-surface-container-lowest text-on-surface-variant hover:text-error transition-colors shadow-sm"
+                                        type="button">
+                                        <span class="material-symbols-outlined text-[20px]">favorite</span>
+                                    </button>
+                                </div>
+                                <div class="flex items-center gap-1.5 text-primary mb-1">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm font-bold text-on-surface">4.91</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(865)</span>
+                                </div>
+                                <a class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors"
+                                    data-path="product-detail" href="#">Nova Pulse Titanium Smartwatch</a>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Sapphire
+                                    crystal face, continuous ECG, sleep tracker, and 100m water resistance.</p>
+                            </div>
+                            <div
+                                class="mt-5 pt-4 border-t border-surface-container-high/40 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">Price</span>
+                                    <span
+                                        class="font-title-price text-title-price text-on-surface font-bold">$299.00</span>
+                                </div>
+                                <button
+                                    class="p-3 rounded-xl bg-surface-container-low text-primary hover:bg-primary-container hover:text-on-primary-container transition-all shadow-sm"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div
+                            class="group relative flex flex-col justify-between rounded-3xl bg-surface-container-lowest p-5 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-up delay-400">
+                            <div>
+                                <div
+                                    class="relative w-full aspect-square rounded-2xl bg-surface-container-low overflow-hidden mb-4">
+                                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        alt="Charger"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZY88GZZp7l3OAUYIXkSXsPig5glr5fMDy0vmHtWLWny0ZYt28n_GRqG7ueMMHI7GZFK_WHg_PNtRTl8lporBVNtT18qNF5ECnUOjvIr50cm-5NlRErz9EjmDCTOLO16srJTi4pTNiJH2we0C_Xua0Bqs0VlpHjvBpoCgEiKJ0OTX1GQsidbEqSWy2bMo9jFwt5812RxP07tnRBnLGZsONCw5jgBpqi3oXX3gX9aEU7Dfw39TCEz08cg">
+                                    <span
+                                        class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-badge text-badge uppercase font-bold">Essential</span>
+                                    <button aria-label="Toggle favorite"
+                                        class="absolute top-3 right-3 p-2 rounded-full bg-surface-container-lowest/80 backdrop-blur hover:bg-surface-container-lowest text-on-surface-variant hover:text-error transition-colors shadow-sm"
+                                        type="button">
+                                        <span class="material-symbols-outlined text-[20px]">favorite</span>
+                                    </button>
+                                </div>
+                                <div class="flex items-center gap-1.5 text-primary mb-1">
+                                    <span class="material-symbols-outlined text-[16px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="font-label-sm text-label-sm font-bold text-on-surface">4.82</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">(1,540)</span>
+                                </div>
+                                <a class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 group-hover:text-primary transition-colors"
+                                    data-path="product-detail" href="#">Flux Magnetic 15W Qi2 Pad</a>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+                                    Ultra-fast active cooling magnetic snap charger compatible with modern smartphones.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-5 pt-4 border-t border-surface-container-high/40 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">Price</span>
+                                    <span
+                                        class="font-title-price text-title-price text-on-surface font-bold">$49.00</span>
+                                </div>
+                                <button
+                                    class="p-3 rounded-xl bg-surface-container-low text-primary hover:bg-primary-container hover:text-on-primary-container transition-all shadow-sm"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Nexus Plus Promo -->
+            <section class="w-full py-12 px-4 sm:px-6 lg:px-12 bg-surface">
+                <div
+                    class="max-w-7xl mx-auto rounded-3xl bg-inverse-surface text-inverse-on-surface p-6 sm:p-8 lg:p-14 relative overflow-hidden shadow-2xl animate-fade-up">
+                    <div
+                        class="absolute -right-20 -bottom-20 w-96 h-96 bg-primary-container/30 rounded-full blur-3xl pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute right-1/3 -top-24 w-80 h-80 bg-secondary/20 rounded-full blur-3xl pointer-events-none">
+                    </div>
+                    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-8 flex flex-col gap-4">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-badge text-badge font-bold uppercase tracking-wider">Nexus
+                                    Plus Membership</span>
+                                <span class="font-label-sm text-label-sm text-inverse-on-surface/80">30-Day Free
+                                    Trial</span>
+                            </div>
+                            <h2 class="font-headline-lg text-headline-lg text-white font-extrabold max-w-xl">
+                                Unlock Unlimited 1-Day Delivery, 5% Cash Back &amp; VIP Drops.
+                            </h2>
+                            <p class="font-body-lg text-body-lg text-inverse-on-surface/80 max-w-2xl">
+                                Join over 120,000 members enjoying exclusive hardware access, priority concierge
+                                repairs, and members-only midnight sales. No contracts, cancel anytime.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                                <div class="flex items-center gap-2.5">
+                                    <span
+                                        class="material-symbols-outlined text-tertiary-fixed text-[20px]">rocket_launch</span>
+                                    <span class="font-label-sm text-label-sm font-semibold text-white">Free Priority
+                                        1-Day Air</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <span
+                                        class="material-symbols-outlined text-tertiary-fixed text-[20px]">savings</span>
+                                    <span class="font-label-sm text-label-sm font-semibold text-white">5% Nexus Cash
+                                        Reward</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <span
+                                        class="material-symbols-outlined text-tertiary-fixed text-[20px]">workspace_premium</span>
+                                    <span class="font-label-sm text-label-sm font-semibold text-white">3-Year Extended
+                                        Warranty</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
+                            <button
+                                class="w-full px-6 py-4 rounded-xl bg-primary-container text-on-primary hover:bg-secondary font-label-md text-label-md font-bold text-center transition-all shadow-[0_4px_14px_0_rgba(37,99,235,0.4)]"
+                                type="button">
+                                Sign Up Free (30-Day Trial)
+                            </button>
+                            <a class="w-full px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-label-md text-label-md font-semibold text-center backdrop-blur transition-all"
+                                data-path="my-account" href="#">
+                                Learn More About Benefits
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Reviews -->
+            <section class="w-full py-16 lg:py-24 bg-surface-container-low">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col gap-12">
+                    <div
+                        class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-center sm:text-left animate-fade-up">
+                        <div>
+                            <span
+                                class="font-badge text-badge uppercase tracking-wider text-primary font-bold">Community
+                                Endorsement</span>
+                            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Loved by Discerning
+                                Creators</h2>
+                        </div>
+                        <div class="flex items-center justify-center sm:justify-end gap-2 text-on-surface">
+                            <div class="flex text-primary">
+                                <span class="material-symbols-outlined text-[20px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[20px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[20px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[20px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[20px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <span class="font-headline-sm text-headline-sm font-bold">4.9 / 5.0</span>
+                            <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">(48,000+
+                                Verified Buyers)</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Testimonial 1 -->
+                        <div
+                            class="rounded-3xl bg-surface-container-lowest p-6 sm:p-8 shadow-sm flex flex-col justify-between gap-6 hover:shadow-md transition-shadow animate-fade-up delay-100">
+                            <div class="flex flex-col gap-3">
+                                <div class="flex text-primary gap-1">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                                <p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                                    "The Nexus Pro ANC headphones blew my expectations away. Soundstage depth is
+                                    identical to wired studio rigs, and battery life effortlessly lasted through two
+                                    transpacific flights."
+                                </p>
+                            </div>
+                            <div
+                                class="flex items-center justify-between pt-4 border-t border-surface-container-high/40">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-on-primary-fixed">
+                                        MR</div>
+                                    <div class="flex flex-col">
+                                        <span class="font-label-md text-label-md font-bold text-on-surface">Marcus
+                                            R.</span>
+                                        <span class="font-body-sm text-body-sm text-on-surface-variant">Audio Engineer
+                                            &amp; Producer</span>
+                                    </div>
+                                </div>
+                                <span
+                                    class="px-2.5 py-1 rounded bg-surface-container font-badge text-badge font-semibold text-primary">Nexus
+                                    Pro ANC</span>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div
+                            class="rounded-3xl bg-surface-container-lowest p-6 sm:p-8 shadow-sm flex flex-col justify-between gap-6 hover:shadow-md transition-shadow animate-fade-up delay-200">
+                            <div class="flex flex-col gap-3">
+                                <div class="flex text-primary gap-1">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                                <p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                                    "Ordered the AeroBook 16 Max on a Tuesday afternoon and it arrived at my office
+                                    Wednesday by 10 AM. Pristine packaging, unmatched fit-and-finish, and customer care
+                                    answered my setup question in 30 seconds."
+                                </p>
+                            </div>
+                            <div
+                                class="flex items-center justify-between pt-4 border-t border-surface-container-high/40">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed">
+                                        EL</div>
+                                    <div class="flex flex-col">
+                                        <span class="font-label-md text-label-md font-bold text-on-surface">Elena
+                                            L.</span>
+                                        <span class="font-body-sm text-body-sm text-on-surface-variant">Lead Product
+                                            Designer</span>
+                                    </div>
+                                </div>
+                                <span
+                                    class="px-2.5 py-1 rounded bg-surface-container font-badge text-badge font-semibold text-primary">AeroBook
+                                    16</span>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div
+                            class="rounded-3xl bg-surface-container-lowest p-6 sm:p-8 shadow-sm flex flex-col justify-between gap-6 hover:shadow-md transition-shadow animate-fade-up delay-300">
+                            <div class="flex flex-col gap-3">
+                                <div class="flex text-primary gap-1">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                                <p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                                    "The Nexus ecosystem is unmatched. Having the 2-year warranty baked in without
+                                    hidden fees gives me total peace of mind for all our studio equipment purchases."
+                                </p>
+                            </div>
+                            <div
+                                class="flex items-center justify-between pt-4 border-t border-surface-container-high/40">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center font-bold text-on-tertiary-fixed">
+                                        DT</div>
+                                    <div class="flex flex-col">
+                                        <span class="font-label-md text-label-md font-bold text-on-surface">David
+                                            T.</span>
+                                        <span class="font-body-sm text-body-sm text-on-surface-variant">Studio
+                                            Founder</span>
+                                    </div>
+                                </div>
+                                <span
+                                    class="px-2.5 py-1 rounded bg-surface-container font-badge text-badge font-semibold text-primary">Workspace
+                                    Hub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="w-full bg-surface-container-lowest mt-16 shadow-[0_-1px_8px_rgba(0,0,0,0.03)]">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-16 pb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-10">
+            <div class="sm:col-span-2 lg:col-span-2 flex flex-col gap-4">
+                <div class="flex items-center gap-2">
+                    <img alt="Nexus Store Logo" class="h-8 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida/AEtjO1VRz-yaevXDNEEhRc081-jhCS9eiGnDu7U70k-Wz4mxxt6AU9pCclVXnTxU0OecyZ91t7-2XBtQ0IVcI3HfYDlJLKFsFPi_Uj7V9edyboJcjHTS4jRSaZn7FgFH2z3y7Fz0OyNGWmiClU4q1IsAvIDK0_Bz-V5B_sAehDWj8OYj49moTD0ZZc0QH0NNsoafDQHaWMqfD6YDMjYmVWvETnqaT-FQ8izMBXIjQdZch7TVnPU-WIKdNQ5Ufk0">
+                    <span
+                        class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">NexusStore</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Engineered for discerning modern
+                    shoppers. Delivering curated high-performance tech, premium sound gear, and precision electronic
+                    lifestyles.</p>
+                <div class="flex flex-col gap-2 mt-2">
+                    <span class="font-label-sm text-label-sm font-semibold text-on-surface">Subscribe to updates &amp;
+                        exclusive offers</span>
+                    <div class="flex flex-col xs:flex-row items-stretch xs:items-center gap-2 max-w-md">
+                        <input
+                            class="flex-1 px-4 py-2.5 rounded-xl bg-surface-container-low font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary-container"
+                            placeholder="Enter your email" type="email">
+                        <button
+                            class="px-5 py-2.5 rounded-xl bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold hover:bg-secondary transition-all shadow-sm shrink-0"
+                            type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-3">
+                <span class="font-label-md text-label-md font-bold text-on-surface">Shop</span>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="categories" href="#">Categories</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="deals" href="#">Trending</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="new-arrivals" href="#">New Arrivals</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="deals" href="#">Outlet</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="store-home" href="#">Gift Cards</a>
+            </div>
+            <div class="flex flex-col gap-3">
+                <span class="font-label-md text-label-md font-bold text-on-surface">Customer Service</span>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="order-tracking" href="#">Order Tracking</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="store-home" href="#">Shipping &amp; Delivery</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="store-home" href="#">Returns &amp; Refunds</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="store-home" href="#">FAQ</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="store-home" href="#">Contact Us</a>
+            </div>
+            <div class="flex flex-col gap-3">
+                <span class="font-label-md text-label-md font-bold text-on-surface">Account</span>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="my-account" href="#">My Account</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="order-tracking" href="#">Order History</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="wishlist" href="#">Wishlist</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="my-account" href="#">Manage Profile</a>
+            </div>
+            <div class="flex flex-col gap-3">
+                <span class="font-label-md text-label-md font-bold text-on-surface">Legal &amp; Trust</span>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="store-home" href="#">Terms of Service</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="store-home" href="#">Privacy Policy</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                    data-path="store-home" href="#">Cookie Settings</a>
+                <div class="flex items-center gap-2 mt-4 text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[20px] text-primary">verified_user</span>
+                    <span class="font-body-sm text-body-sm">256-Bit SSL Secured</span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-surface-container-low py-6">
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Copyright © 2025 NexusStore Inc. All rights
+                    reserved.</p>
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+                    <span
+                        class="px-2.5 py-1 bg-surface-container-lowest rounded font-badge text-badge text-on-surface-variant shadow-sm font-semibold">VISA</span>
+                    <span
+                        class="px-2.5 py-1 bg-surface-container-lowest rounded font-badge text-badge text-on-surface-variant shadow-sm font-semibold">MASTERCARD</span>
+                    <span
+                        class="px-2.5 py-1 bg-surface-container-lowest rounded font-badge text-badge text-on-surface-variant shadow-sm font-semibold">APPLE
+                        PAY</span>
+                    <span
+                        class="px-2.5 py-1 bg-surface-container-lowest rounded font-badge text-badge text-on-surface-variant shadow-sm font-semibold">PAYPAL</span>
+                    <span
+                        class="px-2.5 py-1 bg-surface-container-lowest rounded font-badge text-badge text-on-surface-variant shadow-sm font-semibold">AMEX</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+            // ---------- Live Countdown ----------
+            (function initTimers() {
+                let totalSeconds = 8 * 3600 + 42 * 60 + 15;
+                const flashEl = document.getElementById('flash-deals-timer');
+                const promoEl = document.getElementById('promo-banner-countdown');
+
+                setInterval(() => {
+                    if (totalSeconds <= 0) totalSeconds = 24 * 3600;
+                    totalSeconds--;
+                    const hrs = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+                    const mins = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+                    const secs = String(totalSeconds % 60).padStart(2, '0');
+
+                    if (flashEl) {
+                        flashEl.textContent = `${hrs}:${mins}:${secs}`;
+                    }
+                    if (promoEl) {
+                        promoEl.innerHTML = `<span class="bg-black/20 px-1.5 py-0.5 rounded">${hrs}</span>:<span class="bg-black/20 px-1.5 py-0.5 rounded">${mins}</span>:<span class="bg-black/20 px-1.5 py-0.5 rounded">${secs}</span>`;
+                    }
+                }, 1000);
+            })();
+
+        // ---------- Tabs ----------
+        const tabButtons = document.querySelectorAll('#collection-tabs .tab-btn');
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabButtons.forEach(b => {
+                    b.classList.remove('bg-on-surface', 'text-surface', 'active');
+                    b.classList.add('bg-surface-container', 'text-on-surface-variant');
+                });
+                btn.classList.add('bg-on-surface', 'text-surface', 'active');
+                btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+            });
+        });
+
+        // ---------- Theme toggle ----------
+        const themeToggle = document.querySelector('.theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                const icon = themeToggle.querySelector('.material-symbols-outlined');
+                if (document.documentElement.classList.contains('dark')) {
+                    icon.textContent = 'dark_mode';
+                } else {
+                    icon.textContent = 'light_mode';
+                }
+            });
+        }
+
+        // ---------- Subtle scroll reveal enhancement (optional) ----------
+        // Elements already have CSS animation classes; we're just making sure they appear.
+        // The delays and fadeUp are applied statically. This is enough.
+    </script>
+</body>
+
+</html>

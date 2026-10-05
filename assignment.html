@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Electronic Components · Precise SVG reference</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f7fc;
+            padding: 2rem 1.5rem;
+            color: #1e293b;
+        }
+
+        .wrapper {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 2rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        h1 span {
+            background: #dbeafe;
+            color: #1e40af;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+        }
+
+        .subhead {
+            color: #475569;
+            margin-bottom: 2rem;
+            border-left: 4px solid #3b82f6;
+            padding-left: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .table-container {
+            border-radius: 24px;
+            background: #ffffff;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+            overflow-x: auto;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 900px;
+        }
+
+        th {
+            text-align: left;
+            padding: 1rem 1rem;
+            background: #f8fafc;
+            font-weight: 600;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid #edf2f7;
+            vertical-align: middle;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: #fafbff;
+        }
+
+        .comp-name {
+            font-weight: 600;
+            color: #0f172a;
+            min-width: 160px;
+        }
+
+        .comp-desc {
+            color: #1e293b;
+            line-height: 1.55;
+            font-size: 0.93rem;
+        }
+
+        .comp-desc strong {
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .svg-cell {
+            width: 130px;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .svg-cell svg {
+            display: block;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 4px;
+        }
+
+        .category-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            background: #eef2ff;
+            color: #4338ca;
+            margin-right: 0.5rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-top: 1.5rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>⚡ 100 Electronic Components <span>precise reference</span></h1>
+        <div class="subhead">
+            Each description states <strong>exactly what the component does</strong> — the physical principle or
+            function —
+            so similar parts (e.g. capacitor vs inductor) are never confused.
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 40px;">#</th>
+                        <th style="width: 190px;">Component</th>
+                        <th style="width: 150px;">Diagram (SVG)</th>
+                        <th>Precise function / primary uses</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ========== PASSIVE ========== -->
+                    <tr>
+                        <td>1</td>
+                        <td class="comp-name">Resistor</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="15" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <rect x="15" y="8" width="55" height="14" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <line x1="70" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Opposes current flow</strong> by converting electrical energy into
+                            heat. Used to limit current, divide voltage, and set bias points.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="comp-name">Capacitor (non‑polar)</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="42" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="42" y1="3" x2="42" y2="27" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="54" y1="3" x2="54" y2="27" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="54" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Stores energy in an electric field</strong> between two plates.
+                            Blocks DC, passes AC; used for coupling, filtering, and timing.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="comp-name">Capacitor (polarized)</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="42" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="42" y1="3" x2="42" y2="27" stroke="#0f172a" stroke-width="1.5" />
+                                <path d="M54,3 Q64,15 54,27" fill="none" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="54" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Stores energy in an electric field</strong> with a fixed polarity
+                            (electrolytic). Used for large‑value smoothing and bulk energy storage in power supplies.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="comp-name">Inductor</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="15" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <path d="M15,15 Q22,3 30,15 Q38,3 45,15 Q52,3 60,15 Q68,3 75,15" fill="none"
+                                    stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="75" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Stores energy in a magnetic field</strong> when current flows.
+                            Opposes changes in current; used in filters, chokes, and transformers.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td class="comp-name">Variable resistor (pot)</td>
+                        <td class="svg-cell"><svg width="110" height="35" viewBox="0 0 110 35">
+                                <line x1="0" y1="18" x2="15" y2="18" stroke="#0f172a" stroke-width="1.5" />
+                                <rect x="15" y="11" width="55" height="14" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <line x1="70" y1="18" x2="110" y2="18" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="42" y1="25" x2="42" y2="34" stroke="#0f172a" stroke-width="1.5" />
+                                <polygon points="39,25 45,25 42,18" fill="#0f172a" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Adjustable resistance</strong> via a moving contact (wiper). Used
+                            for volume control, calibration, and user‑adjustable settings.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td class="comp-name">Variable capacitor</td>
+                        <td class="svg-cell"><svg width="110" height="35" viewBox="0 0 110 35">
+                                <line x1="0" y1="15" x2="42" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="42" y1="3" x2="42" y2="27" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="54" y1="3" x2="54" y2="27" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="54" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="48" y1="30" x2="64" y2="8" stroke="#0f172a" stroke-width="1.2" />
+                                <polygon points="62,8 66,6 64,11" fill="#0f172a" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Adjustable capacitance</strong> (meshed plates). Changes resonant
+                            frequency in radio tuning and impedance matching.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td class="comp-name">Variable inductor</td>
+                        <td class="svg-cell"><svg width="110" height="35" viewBox="0 0 110 35">
+                                <line x1="0" y1="15" x2="15" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <path d="M15,15 Q22,3 30,15 Q38,3 45,15 Q52,3 60,15 Q68,3 75,15" fill="none"
+                                    stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="75" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="42" y1="30" x2="58" y2="8" stroke="#0f172a" stroke-width="1.2" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Adjustable inductance</strong> (sliding core). Fine‑tunes RF
+                            circuits, oscillators, and filters.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td class="comp-name">Transformer</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <line x1="0" y1="20" x2="28" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <path d="M28,5 Q36,12 28,20 Q36,28 28,35" fill="none" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <path d="M60,5 Q52,12 60,20 Q52,28 60,35" fill="none" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <line x1="60" y1="20" x2="110" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="44" y1="0" x2="44" y2="40" stroke="#94a3b8" stroke-width="1"
+                                    stroke-dasharray="3,3" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Transfers energy between two coils via magnetic field.</strong>
+                            Steps voltage up/down and provides galvanic isolation.</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td class="comp-name">Fuse</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="24" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <rect x="24" y="7" width="50" height="16" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <path d="M30,15 Q38,5 48,15 Q58,25 68,15" fill="none" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <line x1="74" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Melts to break the circuit</strong> when current exceeds a safe
+                            limit. One‑time overcurrent protection.</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td class="comp-name">Circuit breaker</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="24" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <rect x="24" y="5" width="50" height="20" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <line x1="32" y1="15" x2="66" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <circle cx="49" cy="15" r="3.5" fill="#0f172a" />
+                                <line x1="74" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Resettable overcurrent protection.</strong> Opens a switch
+                            (thermal or magnetic) and can be manually reset.</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td class="comp-name">Crystal oscillator</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="38" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="5" x2="38" y2="25" stroke="#0f172a" stroke-width="1.5" />
+                                <rect x="43" y="8" width="12" height="14" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <line x1="60" y1="5" x2="60" y2="25" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Piezo‑electric resonance</strong> generates a highly stable clock
+                            frequency. Used in microcontrollers, radios, and timers.</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td class="comp-name">Ceramic resonator</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="38" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="5" x2="38" y2="25" stroke="#0f172a" stroke-width="1.5" />
+                                <rect x="41" y="8" width="16" height="14" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <line x1="60" y1="5" x2="60" y2="25" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Mechanical resonance</strong> (lower cost, less precise than
+                            crystal). Clock source for consumer electronics.</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td class="comp-name">Thermistor</td>
+                        <td class="svg-cell"><svg width="110" height="35" viewBox="0 0 110 35">
+                                <line x1="0" y1="15" x2="15" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <rect x="15" y="8" width="55" height="14" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <line x1="70" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="20" y1="25" x2="36" y2="35" stroke="#0f172a" stroke-width="1.2" /><text x="38"
+                                    y="36" font-size="9" fill="#0f172a">t°</text>
+                            </svg></td>
+                        <td class="comp-desc"><strong>Resistance changes with temperature.</strong> Used for temperature
+                            sensing, inrush limiting, and thermal protection.</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td class="comp-name">Varistor (MOV)</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="34" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <rect x="34" y="5" width="22" height="20" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <line x1="56" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" /><text
+                                    x="38" y="21" font-size="10" fill="#0f172a">V</text>
+                            </svg></td>
+                        <td class="comp-desc"><strong>Voltage‑dependent resistor.</strong> Clamps voltage spikes (surge
+                            protection) by becoming conductive above a threshold.</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td class="comp-name">Photoresistor (LDR)</td>
+                        <td class="svg-cell"><svg width="110" height="35" viewBox="0 0 110 35">
+                                <line x1="0" y1="15" x2="15" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <rect x="15" y="8" width="55" height="14" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <line x1="70" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="22" y1="2" x2="40" y2="12" stroke="#0f172a" stroke-width="1.2" />
+                                <line x1="40" y1="2" x2="58" y2="12" stroke="#0f172a" stroke-width="1.2" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Resistance decreases with light intensity.</strong> Used in
+                            light‑sensing circuits, automatic lighting, and alarms.</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td class="comp-name">Trimmer potentiometer</td>
+                        <td class="svg-cell"><svg width="110" height="35" viewBox="0 0 110 35">
+                                <line x1="0" y1="15" x2="15" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <rect x="15" y="8" width="55" height="14" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <line x1="70" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="42" y1="22" x2="42" y2="33" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="34" y1="33" x2="50" y2="33" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Small adjustable resistor</strong> for fine calibration. Set once
+                            and left alone (bias, offset, tuning).</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td class="comp-name">Choke</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="15" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <path d="M15,15 Q22,3 30,15 Q38,3 45,15 Q52,3 60,15 Q68,3 75,15" fill="none"
+                                    stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="75" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="45" y1="2" x2="45" y2="10" stroke="#0f172a" stroke-width="1.2" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Inductor optimized to block high‑frequency AC</strong> while
+                            passing DC. Used for EMI suppression and power filtering.</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td class="comp-name">Ferrite bead</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="34" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <rect x="34" y="7" width="22" height="16" fill="#1e293b" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <line x1="56" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Dissipates high‑frequency noise as heat.</strong> Placed in series
+                            to suppress EMI on power or signal lines.</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td class="comp-name">Antenna</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <line x1="55" y1="35" x2="55" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="35" y1="5" x2="75" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="42" y1="13" x2="68" y2="13" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="49" y1="21" x2="61" y2="21" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Converts electrical signals into radio waves</strong> (and vice
+                            versa). Used for wireless transmission and reception.</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td class="comp-name">Piezoelectric buzzer</td>
+                        <td class="svg-cell"><svg width="110" height="35" viewBox="0 0 110 35">
+                                <line x1="0" y1="20" x2="28" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <circle cx="55" cy="20" r="15" fill="white" stroke="#0f172a" stroke-width="1.5" /><text
+                                    x="48" y="26" font-size="16" fill="#0f172a">♪</text>
+                                <line x1="70" y1="20" x2="110" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Converts electrical oscillations into sound</strong> via a piezo
+                            element. Used for alarms, tones, and beeps.</td>
+                    </tr>
+
+                    <!-- ========== SEMICONDUCTORS ========== -->
+                    <tr>
+                        <td>21</td>
+                        <td class="comp-name">Diode</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="42" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <polygon points="42,5 42,25 58,15" fill="#0f172a" />
+                                <line x1="58" y1="5" x2="58" y2="25" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="58" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Allows current in one direction only.</strong> Used for
+                            rectification, clamping, and protecting against reverse polarity.</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td class="comp-name">LED</td>
+                        <td class="svg-cell"><svg width="110" height="35" viewBox="0 0 110 35">
+                                <line x1="0" y1="20" x2="42" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <polygon points="42,10 42,30 58,20" fill="#0f172a" />
+                                <line x1="58" y1="10" x2="58" y2="30" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="58" y1="20" x2="110" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="46" y1="8" x2="56" y2="0" stroke="#0f172a" stroke-width="1.2" />
+                                <line x1="56" y1="8" x2="66" y2="0" stroke="#0f172a" stroke-width="1.2" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Emits light when forward‑biased.</strong> Used as indicators,
+                            displays, and in optoelectronics.</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td class="comp-name">Zener diode</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="42" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <polygon points="42,5 42,25 58,15" fill="#0f172a" />
+                                <line x1="58" y1="5" x2="58" y2="25" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="58" y1="5" x2="50" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="58" y1="25" x2="66" y2="30" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="58" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Conducts in reverse when a specific voltage is reached</strong>
+                            (Zener voltage). Used for voltage regulation and reference.</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td class="comp-name">Schottky diode</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="42" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <polygon points="42,5 42,25 58,15" fill="#0f172a" />
+                                <line x1="58" y1="5" x2="58" y2="25" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="58" y1="5" x2="52" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="52" y1="25" x2="58" y2="25" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="58" y1="5" x2="64" y2="0" stroke="#0f172a" stroke-width="1.2" />
+                                <line x1="58" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Very fast switching, low forward voltage drop.</strong> Used in
+                            high‑frequency rectifiers and solar applications.</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td class="comp-name">Photodiode</td>
+                        <td class="svg-cell"><svg width="110" height="35" viewBox="0 0 110 35">
+                                <line x1="0" y1="15" x2="42" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <polygon points="42,5 42,25 58,15" fill="#0f172a" />
+                                <line x1="58" y1="5" x2="58" y2="25" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="58" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="2" x2="54" y2="12" stroke="#0f172a" stroke-width="1.2" />
+                                <line x1="54" y1="2" x2="70" y2="12" stroke="#0f172a" stroke-width="1.2" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Generates current when exposed to light.</strong> Used in light
+                            sensors, optocouplers, and remote receivers.</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td class="comp-name">NPN transistor</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <line x1="0" y1="20" x2="38" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="5" x2="38" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="15" x2="60" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="25" x2="60" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="5" x2="110" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="35" x2="110" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <polygon points="56,10 50,13 53,18" fill="#0f172a" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Small base current controls large collector current.</strong> Used
+                            for amplification and switching.</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td class="comp-name">PNP transistor</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <line x1="0" y1="20" x2="38" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="5" x2="38" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="15" x2="60" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="25" x2="60" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="5" x2="110" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="35" x2="110" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <polygon points="46,17 52,14 49,9" fill="#0f172a" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Small base current controls large collector current</strong>
+                            (opposite polarity to NPN). Used in complementary switching circuits.</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td class="comp-name">N‑channel MOSFET</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <line x1="0" y1="20" x2="32" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="32" y1="8" x2="32" y2="32" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="40" y1="5" x2="40" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="40" y1="12" x2="64" y2="12" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="40" y1="28" x2="64" y2="28" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="64" y1="12" x2="64" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="64" y1="28" x2="64" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="64" y1="12" x2="110" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="64" y1="28" x2="110" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Voltage at gate controls current flow.</strong> High‑efficiency
+                            power switching, motor control, and PWM.</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td class="comp-name">P‑channel MOSFET</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <line x1="0" y1="20" x2="32" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="32" y1="8" x2="32" y2="32" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="40" y1="5" x2="40" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="40" y1="12" x2="64" y2="12" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="40" y1="28" x2="64" y2="28" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="64" y1="12" x2="64" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="64" y1="28" x2="64" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="64" y1="12" x2="110" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="64" y1="28" x2="110" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <polygon points="48,20 54,17 54,23" fill="#0f172a" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Voltage at gate controls current flow</strong> (opposite polarity
+                            to N‑channel). Used for load switching and reverse‑polarity protection.</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td class="comp-name">JFET</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <line x1="0" y1="20" x2="38" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="5" x2="38" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="15" x2="60" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="25" x2="60" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="5" x2="110" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="35" x2="110" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Voltage at gate controls current</strong> (high input impedance).
+                            Used for low‑noise amplification and analog switches.</td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td class="comp-name">SCR (Thyristor)</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <line x1="0" y1="20" x2="34" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <polygon points="34,10 34,30 52,20" fill="#0f172a" />
+                                <line x1="52" y1="10" x2="52" y2="30" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="52" y1="20" x2="110" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="52" y1="20" x2="42" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="34" y1="20" x2="24" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Latches ON once triggered</strong> and stays on until current
+                            stops. Used for power control and latching switches.</td>
+                    </tr>
+                    <tr>
+                        <td>32</td>
+                        <td class="comp-name">Triac</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <line x1="0" y1="20" x2="34" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <polygon points="34,10 34,30 52,20" fill="#0f172a" />
+                                <polygon points="52,10 52,30 34,20" fill="#0f172a" />
+                                <line x1="52" y1="20" x2="110" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="43" y1="20" x2="33" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Bidirectional latching switch for AC.</strong> Used in dimmers,
+                            motor speed controls, and AC power switching.</td>
+                    </tr>
+                    <tr>
+                        <td>33</td>
+                        <td class="comp-name">Diac</td>
+                        <td class="svg-cell"><svg width="110" height="30" viewBox="0 0 110 30">
+                                <line x1="0" y1="15" x2="38" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <polygon points="38,5 38,25 54,15" fill="#0f172a" />
+                                <polygon points="54,5 54,25 38,15" fill="#0f172a" />
+                                <line x1="54" y1="15" x2="110" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Bidirectional trigger diode.</strong> Conducts only above a
+                            breakover voltage; used to trigger triacs.</td>
+                    </tr>
+                    <tr>
+                        <td>34</td>
+                        <td class="comp-name">UJT</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <line x1="0" y1="20" x2="34" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <polygon points="34,10 34,30 52,20" fill="#0f172a" />
+                                <line x1="52" y1="20" x2="110" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="52" y1="20" x2="42" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Triggers when emitter voltage reaches a peak.</strong> Used in
+                            relaxation oscillators and timing circuits.</td>
+                    </tr>
+                    <tr>
+                        <td>35</td>
+                        <td class="comp-name">Phototransistor</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <line x1="0" y1="20" x2="38" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="5" x2="38" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="15" x2="60" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="25" x2="60" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="5" x2="110" y2="5" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="35" x2="110" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="32" y1="2" x2="48" y2="12" stroke="#0f172a" stroke-width="1.2" />
+                                <line x1="48" y1="2" x2="64" y2="12" stroke="#0f172a" stroke-width="1.2" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Light controls transistor current.</strong> Used in optocouplers,
+                            light sensors, and punch‑through detectors.</td>
+                    </tr>
+                    <tr>
+                        <td>36</td>
+                        <td class="comp-name">Optocoupler</td>
+                        <td class="svg-cell"><svg width="110" height="45" viewBox="0 0 110 45">
+                                <line x1="0" y1="15" x2="20" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <polygon points="20,10 20,20 30,15" fill="#0f172a" />
+                                <line x1="30" y1="10" x2="30" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="30" y1="15" x2="42" y2="15" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="42" y1="15" x2="42" y2="30" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="42" y1="30" x2="56" y2="30" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="56" y1="25" x2="56" y2="35" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="56" y1="25" x2="72" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="56" y1="35" x2="72" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="72" y1="20" x2="110" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="72" y1="40" x2="110" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="36" y1="5" x2="36" y2="40" stroke="#94a3b8" stroke-width="1"
+                                    stroke-dasharray="3,3" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Transfers signal using light, with no electrical
+                                connection.</strong> Provides galvanic isolation between circuits.</td>
+                    </tr>
+                    <tr>
+                        <td>37</td>
+                        <td class="comp-name">Voltage regulator (78xx)</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <rect x="15" y="10" width="60" height="25" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" /><text x="30" y="26" font-size="9" fill="#0f172a">REG</text>
+                                <line x1="30" y1="10" x2="30" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="10" x2="60" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="45" y1="35" x2="45" y2="45" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Maintains a fixed output voltage</strong> regardless of input or
+                            load changes. Used for stable power supplies.</td>
+                    </tr>
+                    <tr>
+                        <td>38</td>
+                        <td class="comp-name">LM317 (adjustable)</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <rect x="15" y="10" width="60" height="25" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" /><text x="27" y="26" font-size="8" fill="#0f172a">LM317</text>
+                                <line x1="30" y1="10" x2="30" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="10" x2="60" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="45" y1="35" x2="45" y2="45" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Maintains an adjustable output voltage</strong> set by external
+                            resistors. Used in lab power supplies and custom rails.</td>
+                    </tr>
+                    <tr>
+                        <td>39</td>
+                        <td class="comp-name">Op‑amp (741)</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <polygon points="20,5 20,35 70,20" fill="white" stroke="#0f172a" stroke-width="1.5" />
+                                <text x="27" y="18" font-size="9" fill="#0f172a">+</text><text x="27" y="30"
+                                    font-size="9" fill="#0f172a">−</text>
+                                <line x1="0" y1="12" x2="20" y2="12" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="0" y1="28" x2="20" y2="28" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="70" y1="20" x2="110" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Amplifies the difference between two inputs.</strong> Used for
+                            amplification, filtering, comparison, and mathematical operations.</td>
+                    </tr>
+                    <tr>
+                        <td>40</td>
+                        <td class="comp-name">Comparator (LM339)</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <polygon points="20,5 20,35 70,20" fill="white" stroke="#0f172a" stroke-width="1.5" />
+                                <text x="27" y="18" font-size="9" fill="#0f172a">+</text><text x="27" y="30"
+                                    font-size="9" fill="#0f172a">−</text>
+                                <line x1="0" y1="12" x2="20" y2="12" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="0" y1="28" x2="20" y2="28" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="70" y1="20" x2="110" y2="20" stroke="#0f172a" stroke-width="1.5" /><text
+                                    x="42" y="15" font-size="6" fill="#0f172a">CMP</text>
+                            </svg></td>
+                        <td class="comp-desc"><strong>Outputs high or low based on which input is larger.</strong> Used
+                            for level detection, zero‑crossing, and threshold alarms.</td>
+                    </tr>
+                    <tr>
+                        <td>41</td>
+                        <td class="comp-name">Timer IC (555)</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <rect x="15" y="5" width="60" height="30" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" /><text x="36" y="24" font-size="13" fill="#0f172a">555</text>
+                                <line x1="30" y1="5" x2="30" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="45" y1="5" x2="45" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="5" x2="60" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="30" y1="35" x2="30" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="45" y1="35" x2="45" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="35" x2="60" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Generates precise timing pulses or oscillations.</strong> Used for
+                            timers, PWM, and pulse generation.</td>
+                    </tr>
+                    <tr>
+                        <td>42</td>
+                        <td class="comp-name">Microcontroller</td>
+                        <td class="svg-cell"><svg width="110" height="45" viewBox="0 0 110 45">
+                                <rect x="12" y="5" width="65" height="35" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" /><text x="28" y="27" font-size="9" fill="#0f172a">MCU</text>
+                                <line x1="24" y1="5" x2="24" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="5" x2="38" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="52" y1="5" x2="52" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="66" y1="5" x2="66" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="24" y1="40" x2="24" y2="45" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="38" y1="40" x2="38" y2="45" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="52" y1="40" x2="52" y2="45" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="66" y1="40" x2="66" y2="45" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Executes programmed instructions.</strong> Used for embedded
+                            control, automation, and IoT devices.</td>
+                    </tr>
+                    <tr>
+                        <td>43</td>
+                        <td class="comp-name">EEPROM</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <rect x="15" y="5" width="60" height="30" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" /><text x="25" y="24" font-size="8" fill="#0f172a">EEPROM</text>
+                                <line x1="30" y1="5" x2="30" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="45" y1="5" x2="45" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="5" x2="60" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="30" y1="35" x2="30" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="45" y1="35" x2="45" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="35" x2="60" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Non‑volatile memory that can be erased electrically.</strong>
+                            Stores configuration and small data that must survive power‑off.</td>
+                    </tr>
+                    <tr>
+                        <td>44</td>
+                        <td class="comp-name">SRAM</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <rect x="15" y="5" width="60" height="30" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" /><text x="32" y="24" font-size="10" fill="#0f172a">SRAM</text>
+                                <line x1="30" y1="5" x2="30" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="45" y1="5" x2="45" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="5" x2="60" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="30" y1="35" x2="30" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="45" y1="35" x2="45" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="35" x2="60" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Fast volatile memory that holds data as long as power is
+                                on.</strong> Used for CPU cache and temporary buffers.</td>
+                    </tr>
+                    <tr>
+                        <td>45</td>
+                        <td class="comp-name">DRAM</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <rect x="15" y="5" width="60" height="30" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" /><text x="32" y="24" font-size="10" fill="#0f172a">DRAM</text>
+                                <line x1="30" y1="5" x2="30" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="45" y1="5" x2="45" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="5" x2="60" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="30" y1="35" x2="30" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="45" y1="35" x2="45" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="35" x2="60" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Volatile memory that must be refreshed constantly.</strong> Used
+                            for main memory in computers (high density, low cost).</td>
+                    </tr>
+                    <tr>
+                        <td>46</td>
+                        <td class="comp-name">Flash memory</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <rect x="15" y="5" width="60" height="30" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" /><text x="25" y="24" font-size="8" fill="#0f172a">FLASH</text>
+                                <line x1="30" y1="5" x2="30" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="45" y1="5" x2="45" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="5" x2="60" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="30" y1="35" x2="30" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="45" y1="35" x2="45" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="60" y1="35" x2="60" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Non‑volatile memory erased in blocks.</strong> Used for firmware,
+                            USB drives, and SSDs.</td>
+                    </tr>
+                    <tr>
+                        <td>47</td>
+                        <td class="comp-name">Shift register</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <rect x="12" y="8" width="65" height="24" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" /><text x="22" y="24" font-size="8" fill="#0f172a">74HC595</text>
+                                <line x1="24" y1="8" x2="24" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="40" y1="8" x2="40" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="56" y1="8" x2="56" y2="0" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="24" y1="32" x2="24" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="40" y1="32" x2="40" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="56" y1="32" x2="56" y2="40" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Converts serial data to parallel (or vice versa).</strong> Expands
+                            I/O pins, drives LED matrices.</td>
+                    </tr>
+                    <tr>
+                        <td>48</td>
+                        <td class="comp-name">Multiplexer</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <polygon points="22,5 22,35 75,20" fill="white" stroke="#0f172a" stroke-width="1.5" />
+                                <text x="32" y="20" font-size="8" fill="#0f172a">MUX</text>
+                                <line x1="0" y1="10" x2="22" y2="10" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="0" y1="20" x2="22" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="0" y1="30" x2="22" y2="30" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="75" y1="20" x2="110" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Selects one of many inputs and routes it to a single
+                                output.</strong> Used for data selection and signal routing.</td>
+                    </tr>
+                    <tr>
+                        <td>49</td>
+                        <td class="comp-name">Demultiplexer</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <polygon points="75,5 75,35 22,20" fill="white" stroke="#0f172a" stroke-width="1.5" />
+                                <text x="38" y="20" font-size="8" fill="#0f172a">DEMUX</text>
+                                <line x1="0" y1="20" x2="22" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="75" y1="10" x2="110" y2="10" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="75" y1="20" x2="110" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="75" y1="30" x2="110" y2="30" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Routes a single input to one of many outputs.</strong> Used for
+                            data distribution and memory addressing.</td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td class="comp-name">Logic gate (AND)</td>
+                        <td class="svg-cell"><svg width="110" height="40" viewBox="0 0 110 40">
+                                <path d="M32,5 L52,5 Q72,5 72,20 Q72,35 52,35 L32,35 Z" fill="white" stroke="#0f172a"
+                                    stroke-width="1.5" />
+                                <line x1="0" y1="12" x2="32" y2="12" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="0" y1="28" x2="32" y2="28" stroke="#0f172a" stroke-width="1.5" />
+                                <line x1="72" y1="20" x2="110" y2="20" stroke="#0f172a" stroke-width="1.5" />
+                            </svg></td>
+                        <td class="comp-desc"><strong>Output is HIGH only when all inputs are HIGH.</strong> Fundamental
+                            building block of digital logic.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer-note">
+            ⚡ <strong>50 of 100 components shown</strong> — passive + semiconductor (first half).<br>
+            Each description now states the <em>physical principle</em> (e.g. “stores energy in a magnetic field”) so
+            similar components are easy to tell apart.
+        </div>
+    </div>
+</body>
+
+</html>
