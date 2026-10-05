@@ -22,6 +22,9 @@
 /vendor
 Homestead.json
 Homestead.yaml
+assignment.html
+google-services.json
+lex.html
 Thumbs.db
 
 # Vibe service (deployed separately from R2)
