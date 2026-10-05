@@ -2,8 +2,8 @@
     {{-- <native:top-bar-action id="search" label="Search" icon="search" @tap="openSearch" /> --}}
     <native:top-bar-action icon="home" @press="goHome" />
 </native:top-bar>
-<native:spacer class="h-2 flex-grow-0" />
-
+{{-- <native:spacer class="h-2 flex-grow-0" /> --}}
+{{--
 <native:column class="w-full p-6 rounded-2xl bg-theme-surface gap-3">
 
         <native:column class="gap-1">
@@ -34,7 +34,7 @@
             </native:text>
         </native:pressable>
 
-    </native:column>
+    </native:column> --}}
 <native:spacer class="h-2 flex-grow-0" />
 
 {{-- Danger Zone --}}
