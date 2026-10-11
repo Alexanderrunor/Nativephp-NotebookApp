@@ -24,7 +24,7 @@ _Write it down. Find it fast. Keep it yours._
 
 - 📝 **Create, edit and delete notes** in a clean, distraction-free editor
 - 💾 **Local-first storage** — your notes stay on your machine
-- 🖥️ **Native desktop app** powered by NativePHP (no browser tab needed)
+- 🖥️ **Native mobile app** powered by NativePHP (no browser tab needed)
 - ⚡ **Lightweight and fast** — built on Laravel, runs offline
 
 > Edit this list to match what your app actually does.
